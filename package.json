@@ -12,6 +12,7 @@
     "start:dev": "nodemon src/server.js",
     "start:solution": "npm run -it docker:build && npm run docker:run",
     "test": "jest",
+    "test:watch": "jest --watch",
     "test:solution": "npm run docker:build && npm run docker:test"
   },
   "keywords": [],

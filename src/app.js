@@ -1,10 +1,10 @@
 const express = require("express");
-const morgan = require("morgan");
+//const morgan = require("morgan");
 const app = express();
 const validateZip = require("./middleware/validateZip");
 const getZoos = require("./utils/getZoos")
 
-app.use(morgan("dev"));
+//app.use(morgan("dev"));
 
 app.get("/check/:zip", validateZip, (req, res, next) => {
     const zip = req.params.zip;
@@ -20,7 +20,7 @@ app.get("/zoos/:zip", validateZip, (req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  res.send(`The route ${req.path} does not exist!`);
+  res.send(`That route could not be found!`);
 });
 app.use((err, req, res, next) => {
   console.error(err);

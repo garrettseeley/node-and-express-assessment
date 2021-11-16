@@ -1,9 +1,9 @@
 function validateZip(req, res, next) {
-  const zip = parseInt(req.params.zip);
-  if (typeof(zip) !== "number" || zip.toString().length !== 5) {
-    next(`Zip ${req.params.zip} is invalid`);
+  const { zip } = req.params
+  if (zip.length !== 5 || isNaN(Number(zip))) {
+      next(`Zip (${zip}) is invalid!`)
   } else {
-    next();
+      next();
   }
 }
 
