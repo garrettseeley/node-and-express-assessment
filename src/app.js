@@ -39,7 +39,6 @@ app.use((req, res, next) => {
   res.send(`That route could not be found!`);
 });
 app.use((err, req, res, next) => {
-  console.error(err);
   res.send(err);
 });
 
